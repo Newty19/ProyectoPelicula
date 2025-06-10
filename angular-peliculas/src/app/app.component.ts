@@ -1,17 +1,18 @@
 import { NgFor, NgIf, NgOptimizedImage, UpperCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ListadoPeliculasComponent } from './peliculas/listado-peliculas/listado-peliculas.component';
 
 @Component({
   selector: 'app-root',
-  imports: [UpperCasePipe, NgOptimizedImage],
+  imports: [ListadoPeliculasComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
-      this.peliculas = [{
+      this.peliculasEnCines = [{
         titulo: 'Inside Out 2',
         fechaLanzamiento: new Date(),
         precio: 1400.99,
@@ -23,7 +24,8 @@ export class AppComponent implements OnInit {
         precio: 300.99,
         poster: 'https://upload.wikimedia.org/wikipedia/en/7/73/Moana_2_poster.jpg'
       },
-      {
+      ];
+      this.peliculasProximosEstrenos = [{
         titulo: 'Bad Boys: Ride or Die',
         fechaLanzamiento: new Date('2016-05-03'),
         precio: 300.99,
@@ -46,11 +48,10 @@ export class AppComponent implements OnInit {
         fechaLanzamiento: new Date('2016-05-03'),
         precio: 300.99,
         poster: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/The_Flash_%28film%29_poster.jpg/220px-The_Flash_%28film%29_poster.jpg'
-      }];
-
+      }]
     }, 2000)
   }
-  title = 'Angular Peliculas';
-  peliculas!: any[];
+  peliculasEnCines!: any[];
+  peliculasProximosEstrenos!: any[];
 
 }

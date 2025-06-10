@@ -1,0 +1,22 @@
+@if (!peliculas) {
+<img src="loading.gif" />
+
+}
+@else if (peliculas.length === 0) {
+<div>
+    <p>No hay peliculas</p>
+</div>
+} @else {
+@for (pelicula of peliculas; track $index) {
+<div class="contenedor-pelicula">
+    <div style="display: flex; flex-direction: row; gap: 10px;">
+        <div>
+            <img [src]="pelicula.poster" width="169" height="250" />
+        </div>
+        <div>
+            <p>{{$index}}) Pelicula: {{ pelicula.titulo }} </p>
+        </div>
+    </div>
+</div>
+}
+}
