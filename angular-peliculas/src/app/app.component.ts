@@ -54,4 +54,7 @@ export class AppComponent implements OnInit {
   peliculasEnCines!: any[];
   peliculasProximosEstrenos!: any[];
 
+  clickBoton(){
+    alert('¡Hola, mundo!');
+  }
 }
